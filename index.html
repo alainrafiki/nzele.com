@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-fr="NZELE - Tricots et Autres Articles Artisanaux | Handcrafted Knitwear and More" data-en="NZELE - Handcrafted Knitwear and More | Tricots et Autres Articles Artisanaux">NZELE - Tricots et Autres Articles Artisanaux | Handcrafted Knitwear and More</title>
+    <meta name="description" content="NZELE - Créations artisanales de tricots et autres articles artisanaux. Écharpes, bonnets, châles sur mesure à partir de la RDC et de l'Afrique de l'Est. Livraison mondiale DHL/FedEx.">
+    <meta name="keywords" content="tricot artisanal, écharpes, bonnets, châles, sur mesure, Goma, Bukavu, Congo, DRC, Uganda, Kampala, livraison mondiale">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-blue: #131f28;
+            --teal: #0395a7;
+            --white: #ffffff;
+            --pink: #ec134b;
+            --orange: #fba615;
+            --brown: #5b4209;
+            --gold: #ddb92c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-blue);
+            background-color: var(--white);
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--teal);
+            border-radius: 25px;
+            padding: 8px;
+            box-shadow: 0 4px 15px rgba(3, 149, 167, 0.3);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 18px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--white);
+            color: var(--teal);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--teal) 100%);
+            color: var(--white);
+            padding: 100px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="knit" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23knit)"/></svg>');
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--white), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: clamp(1rem, 4vw, 1.3rem);
+            font-weight: 300;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--pink);
+            color: var(--white);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(236, 19, 75, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(236, 19, 75, 0.4);
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section:nth-child(even) {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark-blue);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--teal), var(--gold));
+            border-radius: 2px;
+        }
+
+        .text-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--teal);
+            box-shadow: 0 15px 40px rgba(3, 149, 167, 0.2);
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--teal), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark-blue);
+        }
+
+        .product-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-details {
+            margin-top: 10px;
+        }
+
+        .contact-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: var(--pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .contact-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-blue);
+        }
+
+        .contact-link {
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--pink);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .shipping-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .lang-toggle {
+                top: 15px;
+                right: 15px;
+            }
+            
+            .header {
+                padding: 80px 15px 40px;
+            }
+            
+            .section {
+                padding: 40px 15px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 0.9rem;
+            }
+            
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" onclick="switchLanguage('fr')">FR</button>
+        <button class="lang-btn" onclick="switchLanguage('en')">EN</button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">NZELE</h1>
+            <p class="tagline" data-fr="Créations artisanales de tricots d'exception" data-en="Handcrafted knitwear of exceptional quality">Créations artisanales de tricots d'exception</p>
+            <a href="#contact" class="cta-button" data-fr="Contactez-nous" data-en="Contact Us">Contactez-nous</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="section">
+        <h2 class="section-title" data-fr="Notre Artisanat" data-en="Our Craftsmanship">Notre Artisanat</h2>
+        <div class="text-content">
+            <p data-fr="NZELE crée des pièces de tricot uniques et authentiques. Chaque écharpe, bonnet et châle est confectionné à la main avec passion et savoir-faire, alliant traditions et techniques modernes pour vous offrir des créations d'exception." data-en="NZELE creates unique and authentic knitted pieces. Each scarf, bonnet, and shawl is handcrafted with passion and expertise, combining traditional and modern techniques to offer you exceptional creations.">NZELE crée des pièces de tricot uniques et authentiques. Chaque écharpe, bonnet et châle est confectionné à la main avec passion et savoir-faire, alliant traditions et techniques modernes pour vous offrir des créations d'exception.</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section">
+        <h2 class="section-title" data-fr="Nos Créations" data-en="Our Creations">Nos Créations</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🧣</div>
+                <h3 class="product-title" data-fr="Écharpes" data-en="Scarves">Écharpes</h3>
+                <p class="product-desc" data-fr="Écharpes douillettes et élégantes, tricotées avec des fils de qualité supérieure pour vous tenir chaud avec style." data-en="Cozy and elegant scarves, knitted with premium quality yarns to keep you warm in style.">Écharpes douillettes et élégantes, tricotées avec des fils de qualité supérieure pour vous tenir chaud avec style.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🧶</div>
+                <h3 class="product-title" data-fr="Bonnets" data-en="Bonnets">Bonnets</h3>
+                <p class="product-desc" data-fr="Bonnets confortables et tendance, parfaits pour toutes les saisons et tous les styles." data-en="Comfortable and trendy bonnets, perfect for all seasons and every style.">Bonnets confortables et tendance, parfaits pour toutes les saisons et tous les styles.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🧥</div>
+                <h3 class="product-title" data-fr="Châles" data-en="Shawls">Châles</h3>
+                <p class="product-desc" data-fr="Châles sophistiqués pour sublimer vos tenues, alliant confort et élégance intemporelle." data-en="Sophisticated shawls to enhance your outfits, combining comfort and timeless elegance.">Châles sophistiqués pour sublimer vos tenues, alliant confort et élégance intemporelle.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">💫</div>
+                <h3 class="product-title" data-fr="Bandeaux" data-en="Headbands">Bandeaux</h3>
+                <p class="product-desc" data-fr="Bandeaux tricotés à la main, parfaits pour maintenir vos cheveux avec style et élégance au quotidien." data-en="Hand-knitted headbands, perfect for keeping your hair stylishly in place with everyday elegance.">Bandeaux tricotés à la main, parfaits pour maintenir vos cheveux avec style et élégance au quotidien.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">👜</div>
+                <h3 class="product-title" data-fr="Sacs Tricotés" data-en="Knitted Bags">Sacs Tricotés</h3>
+                <p class="product-desc" data-fr="Sacs et pochettes tricotés durables et pratiques, idéaux pour le marché, le travail ou les sorties quotidiennes." data-en="Durable and practical knitted bags and pouches, ideal for market trips, work, or daily outings.">Sacs et pochettes tricotés durables et pratiques, idéaux pour le marché, le travail ou les sorties quotidiennes.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">✨</div>
+                <h3 class="product-title" data-fr="Sur Mesure" data-en="Custom Made">Sur Mesure</h3>
+                <p class="product-desc" data-fr="Créations personnalisées selon vos goûts et besoins. Chaque pièce est unique et conçue spécialement pour vous." data-en="Personalized creations according to your tastes and needs. Each piece is unique and designed especially for you.">Créations personnalisées selon vos goûts et besoins. Chaque pièce est unique et conçue spécialement pour vous.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section">
+        <h2 class="section-title" data-fr="Nos Services" data-en="Our Services">Nos Services</h2>
+        <div class="text-content">
+            <p data-fr="Nous proposons des créations sur mesure adaptées à vos envies et besoins spécifiques. Que vous souhaitiez une pièce unique ou vérifier notre stock disponible, nous sommes à votre disposition." data-en="We offer custom-made creations tailored to your specific desires and needs. Whether you want a unique piece or want to check our available stock, we are at your service.">Nous proposons des créations sur mesure adaptées à vos envies et besoins spécifiques. Que vous souhaitiez une pièce unique ou vérifier notre stock disponible, nous sommes à votre disposition.</p>
+            <p><strong data-fr="Livraison mondiale via DHL et FedEx." data-en="Worldwide delivery via DHL and FedEx.">Livraison mondiale via DHL et FedEx.</strong></p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title" data-fr="Contactez-nous" data-en="Contact Us">Contactez-nous</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <h3 class="contact-title" data-fr="Email" data-en="Email">Email</h3>
+                <div class="contact-details">
+                    <a href="mailto:info@nzele.com" class="contact-link">info@nzele.com</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <h3 class="contact-title" data-fr="Numéro WhatsApp" data-en="WhatsApp Number">Numéro WhatsApp</h3>
+                <div class="contact-details">
+                    <a href="mailto:info@nzele.com" class="contact-link" data-fr="Demandez par email" data-en="Request by email">Demandez par email</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <h3 class="contact-title" data-fr="Localisation" data-en="Location">Localisation</h3>
+                <div class="contact-details">
+                    <span data-fr="RD Congo, Rwanda, Ouganda" data-en="DR Congo, Rwanda, Uganda">RD Congo, Rwanda, Ouganda</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="shipping-info">
+                <h3 data-fr="🌍 Livraison Internationale" data-en="🌍 International Shipping">🌍 Livraison Internationale</h3>
+                <p data-fr="Nous expédions partout dans le monde via DHL et FedEx" data-en="We ship worldwide via DHL and FedEx">Nous expédions partout dans le monde via DHL et FedEx</p>
+            </div>
+            <p class="footer-text" data-fr="&copy; 2025 NZELE - Créations artisanales de tricots" data-en="&copy; 2025 NZELE - Handcrafted knitwear">&copy; 2025 NZELE - Créations artisanales de tricots</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchLanguage(lang) {
+            // Update all elements with data-fr and data-en attributes
+            document.querySelectorAll('[data-fr][data-en]').forEach(element => {
+                if (lang === 'fr') {
+                    element.textContent = element.getAttribute('data-fr');
+                } else {
+                    element.textContent = element.getAttribute('data-en');
+                }
+            });
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update document language
+            document.documentElement.lang = lang;
+            
+            // Update page title based on language
+            const titleElement = document.querySelector('title');
+            if (lang === 'fr') {
+                titleElement.textContent = titleElement.getAttribute('data-fr');
+            } else {
+                titleElement.textContent = titleElement.getAttribute('data-en');
+            }
+        }
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add subtle animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
